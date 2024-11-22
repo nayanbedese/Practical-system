@@ -18,9 +18,12 @@ app.use(express.json());
 app.use("/api/v1", practicalManagementRoute);
 
 // Root route
-app.get("/", (req, res) => {
-    res.send("Practical Management System");
-});
+app.get("/", (req, res)=>{
+  res.json({
+    success: true,
+    message: "Server Running Successfully"
+  })
+})
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
